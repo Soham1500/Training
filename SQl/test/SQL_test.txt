@@ -1,0 +1,26 @@
+1. SELECT customername FROM Customers ORDER BY customername ASC;
+
+2. SELECT product_name, price FROM Products ORDER BY price DESC LIMIT 10;
+
+3. SELECT MAX(salary) FROM Employees WHERE salary < (SELECT MAX(salary) FROM Employees);
+
+4. SELECT city, COUNT(*) AS total_customers FROM Customers GROUP BY city;
+
+5. SELECT department_id, SUM(salary) AS total_salary
+   FROM Employees GROUP BY department_id
+   HAVING SUM(salary) > 200000;
+
+7. SELECT * FROM Products WHERE product_name LIKE '%Pro%';
+
+9. SELECT MONTH(order_date) AS month, COUNT(*) AS total_orders
+   FROM Orders GROUP BY MONTH(order_date);
+
+11.  Data
+
+12. ORDER BY DESC
+
+13. ASC
+
+14. 15.68
+
+15.COUNT()
