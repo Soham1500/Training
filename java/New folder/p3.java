@@ -19,7 +19,7 @@ this.commission=commi;
 }
 
 void printSalary(double sal){
-this.salary=sal+allowance;
+this.salary=sal+commission;
 }
 
 }
@@ -33,10 +33,10 @@ h1=new HR();
 
 
 h1.printId(101);         
-h1.getAllowance(10000);   
+h1.getCommission(10000);   
 h1.printName("virus");
 h1.printSalary(299999.99);
 
 
-System.out.println(a1.id +" " +a1.name + " "+a1.salary);
+System.out.println(h1.id +" " +h1.name + " "+h1.salary);
 }}
