@@ -1,0 +1,62 @@
+package ss;
+
+
+class Shape{
+	String color;
+	void area() {
+		System.out.println("area of Shape");
+	}
+	void perimeter() {
+		System.out.println("perimeter of shape ");
+	}
+	
+	void display() {
+		System.out.println("display method");
+	}
+	
+} 
+
+class Circle extends Shape{
+	double r,area;
+	
+	void area() {
+		area =(3.14*r*r);
+	}
+	
+	Circle(){
+		this.r=3;
+	}
+	Circle(double ra){
+		this.r=ra;
+		
+	}
+	void display() {
+		System.out.println("arae is "+area);
+	}
+	}
+
+class Rectangle extends Shape{
+	int l,b;
+	double area;
+	void area() {
+		 area=l*b;
+		
+	}
+	Rectangle(){
+		this.l=10;
+		this.b=20;
+	}
+	Rectangle(int l,int b){
+		this.l=l;
+		this.b=b;
+	}
+	void display() {
+		System.out.println("area is "+area);
+	}
+}
+public class Shape_Inheritance {
+Circle  cc=new Circle();
+
+cc.area();
+cc.display();
+}

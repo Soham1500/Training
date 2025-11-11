@@ -1,0 +1,70 @@
+package ss;
+class Account{
+	int accNo;
+	double balance;
+	public int getAccNo() {
+		return accNo;
+	}
+	public void setAccNo(int accNo) {
+		this.accNo = accNo;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	
+	void deposit() {
+		System.out.println("Money is added ");
+	}
+	void withdraw() {
+		System.out.println("money is withdrawed ");
+	}
+	void checkBalance() {
+		System.out.println("Low Balance");
+	}
+	Account(){
+		this.accNo=1244;
+		this.balance=100;
+		
+		
+	}
+	Account(int a,double b){
+		this.accNo=a;
+		this.balance=45556;
+		
+		
+	}
+	void display() {
+		System.out.println("acc no is : "+this.accNo);
+		System.out.println("balance:"+this.balance);
+	 }
+}
+
+class SavingAccount{
+	double interestRate;
+
+	public double getInterestRate() {
+		return interestRate;
+	}
+
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
+	}
+	
+	void addInterest() {
+		System.out.println("show inter");
+	}
+	SavingAccount(){
+		super();
+		this.interestRate=13;
+	}
+	SavingAccount(int p,double l,double b){
+		super(p,b);
+		this.interestRate=int
+	}
+}
+public class Account_inheritance {
+
+}

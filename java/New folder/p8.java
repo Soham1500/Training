@@ -19,10 +19,35 @@ class Product {
     void setQuantity(int q) {
         this.quantity = q;
     }
+int getProductId(){
+return this.productId; 
+}
+String getProductName(){
+return this.productName;
+}
+double getPrice(){
+return this.price;
+}
+int quantity(){
+return this.quantity;}
 
     void display() {
-        System.out.println(productId + " " + productName + " " + price + " " + quantity);
-    }
+        System.out.println(" productId= "+this.getProductId() + " productName= "+this.getProductName()+" price = "+this.getPrice()+" quantity= "
++this.quantity());
+}
+
+Product(){
+this.productId=101;this.productName="op";this.price=89;this.quantity=12;
+System.out.println(this.productId+" " + this.productName+ "  " +this.price + "  " +this.quantity);
+
+}
+
+Product(int p,String n,double pr,int q){
+this.productId=p;this.productName=n;this.price=pr;this.quantity=q;
+System.out.println(this.productId+" " + this.productName+ "  " +this.price + "  " +this.quantity);
+}
+
+
 }
 
 class TestProduct {
@@ -35,5 +60,7 @@ class TestProduct {
         p1.setQuantity(5);
 
         p1.display();
+
+Product p2 = new Product(100,"qw",12,2);
     }
 }

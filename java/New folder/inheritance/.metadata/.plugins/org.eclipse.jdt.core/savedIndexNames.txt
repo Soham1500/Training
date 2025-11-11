@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\ASUS\Desktop\c\java\New folder\inheritance\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1475937397.index
+210315514.index

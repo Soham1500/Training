@@ -1,0 +1,67 @@
+package ss;
+
+
+
+class Appliance{
+	String brand;
+	int vtg;
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public int getVtg() {
+		return vtg;
+	}
+	public void setVtg(int vtg) {
+		this.vtg = vtg;
+	}
+	
+	void turnOn() {
+		System.out.println("Appliance started ");
+	}
+	void turnOff() {
+		System.out.println("Appliance Stopped ");
+	}
+	Appliance(){
+		this.brand="lG";
+		this.vtg=130;
+		
+	}
+	Appliance(String b,int v){
+		this.brand=b;
+		this.vtg=v;
+	}
+	void display() {
+		System.out.println("brand is :"+this.brand);
+		System.out.println("Voltage is :"+this.vtg);
+	}
+}
+
+class WashingMachine{
+	double drumCapacity;
+
+	public double getDrumCapacity() {
+		return drumCapacity;
+	}
+
+	public void setDrumCapacity(double drumCapacity) {
+		this.drumCapacity = drumCapacity;
+	}
+	WashingMachine(){
+		super();
+		this.drumCapacity=120;
+	}
+	WashingMachine(String b,int v,double d){
+		super(b,v);
+		drumCapacity=d;
+	}
+	void display() {
+		super.display();
+		System.out.println("drum Capacity is :"+this.drumCapacity);
+	}
+}
+public class Appliance_Inheritance {
+
+}

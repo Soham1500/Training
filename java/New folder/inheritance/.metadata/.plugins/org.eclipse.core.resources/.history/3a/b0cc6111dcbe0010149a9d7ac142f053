@@ -1,0 +1,149 @@
+package ss;
+
+class Employee {
+	String name;
+	int empId;
+	double salary;
+
+	String getName() {
+		return name;
+	}
+
+	void setName(String name) {
+		this.name = name;
+	}
+
+	int getEmpId() {
+		return empId;
+	}
+
+	void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+	double getSalary() {
+		return salary;
+	}
+
+	void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	void work() {
+		System.out.println("Start Working");
+	}
+
+	void attendMeeting() {
+		System.out.println("Attend meeting ");
+	}
+
+	void applyLeave() {
+		System.out.println("Apply leave method ");
+	}
+
+	Employee() {
+		this.name = "Sam";
+		this.empId = 101;
+		this.salary = 120000;
+	} // default constructor ends
+
+	Employee(String n, int e, double s) {
+		this.name = n;
+		this.empId = e;
+		this.salary = s;
+	} // parameterized constructor ends
+
+	void display() {
+		System.out.println("Employee ID : " + this.empId);
+		System.out.println("Name : " + this.name);
+		System.out.println("Salary : " + this.salary);
+	} // display function ends
+} // class Employee ends
+
+
+class HR extends Employee {
+	int teamSize;
+
+	int getTeamSize() {
+		return teamSize;
+	}
+
+	void setTeamSize(int teamSize) {
+		this.teamSize = teamSize;
+	}
+
+	void assignTask() {
+		System.out.println("Assign Task Method ");
+	}
+
+	void evaluatePerformance() {
+		System.out.println("Evaluate Performance Method ");
+	}
+
+	void display() {
+		super.display();
+		System.out.println("Team Size : " + this.teamSize);
+	} // display function ends
+
+	HR() {
+		super();
+		this.teamSize = 10;
+	} // default constructor ends
+
+	HR(String n, int e, double s, int t) {
+		super(n, e, s);
+		this.teamSize = t;
+	} // parameterized constructor ends
+} // class HR ends
+
+
+class Admin extends Employee {
+	String department;
+
+	String getDepartment() {
+		return department;
+	}
+
+	void setDepartment(String department) {
+		this.department = department;
+	}
+
+	void manageResources() {
+		System.out.println("Managing company resources");
+	}
+
+	void scheduleMeeting() {
+		System.out.println("Scheduling meetings");
+	}
+
+	void display() {
+		super.display();
+		System.out.println("Department : " + this.department);
+	} // display function ends
+
+	Admin() {
+		super();
+		this.department = "Operations";
+	} // default constructor ends
+
+	Admin(String n, int e, double s, String d) {
+		super(n, e, s);
+		this.department = d;
+	} // parameterized constructor ends
+} // class Admin ends
+
+
+public class EmployeeInher {
+	public static void main(String[] args) {
+		HR h1 = new HR();
+		h1.display();
+
+		System.out.println("\n--- HR with parameters ---");
+		HR h2 = new HR("Ravi", 201, 95000, 15);
+		h2.display();
+
+		System.out.println("\n--- Admin Employee ---");
+		Admin a1 = new Admin("Neha", 301, 85000, "Finance");
+		a1.display();
+	}
+} // class EmployeeInher ends

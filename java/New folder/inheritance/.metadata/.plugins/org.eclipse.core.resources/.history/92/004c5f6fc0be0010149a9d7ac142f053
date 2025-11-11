@@ -1,0 +1,106 @@
+package ss;
+
+class vehicle{
+	String brand;
+	double speed;
+	String FuelType;
+	 String getBrand() {
+		return brand;
+	}
+	 void setBrand(String brand) {
+		this.brand = brand;
+	}
+	 double getSpeed() {
+		return speed;
+	}
+	 void setSpeed(double speed) {
+		this.speed = speed;
+	}
+	 String getFuelType() {
+		return FuelType;
+	}
+	 void setFuelType(String fuelType) {
+		FuelType = fuelType;
+	}
+	
+	void start() {
+		System.out.println("vehicle is started ");
+	}
+	void stop() {
+		System.out.println("vehicle is stoped");
+	}
+	void refuel() {
+		System.out.println("refueling in process ");
+	}
+	
+	vehicle(){
+		this.brand="Royal Enfield";
+		this.speed=88;
+		this.FuelType="petrol ";
+		
+	}
+	vehicle(String b,double s,String f){
+		this.brand=b;
+		this.speed=s;
+		this.FuelType=f;
+		
+	}
+	void display() {
+		System.out.println("\n");
+		System.out.println("brand is : "+this.brand);
+		System.out.println("speed is :"+this.speed);
+		System.out.println("Fueltype is : "+this.FuelType);
+	}
+	
+}
+
+class Car extends vehicle{
+	int noOfDoors;
+	boolean hasSunroof;
+	
+	void playMusic() {
+		System.out.println("playing music ");
+	}
+	void openTrunk() {
+		System.out.println("trunk is open ");
+	}
+	 int getNoOfDoors() {
+		return noOfDoors;
+	}
+	 void setNoOfDoors(int noOfDoors) {
+		this.noOfDoors = noOfDoors;
+	}
+	 boolean isHasSunroof() {
+		return hasSunroof;
+	}
+	 void setHasSunroof(boolean hasSunroof) {
+		this.hasSunroof = hasSunroof;
+	}
+	 void display() {
+		 super.display();
+		 System.out.println("no of doors are : "+this.noOfDoors);
+		 System.out.println("has Sunroof "+hasSunroof);
+	 }
+	 
+	 Car(){
+		 super();
+		 this.noOfDoors=4;
+		 this.hasSunroof=true;
+	 }
+	 Car(String b,double s,String f,int no,boolean h){
+		 super(b,s,f);
+		 this.noOfDoors=no;
+		 this.hasSunroof=h;
+	 }
+}
+
+public class Vehicle_Inheritance {
+	public static void main(String[] args) {
+		Car c=new Car();
+		c.display();
+		
+		Car c1=new Car("Tata",100,"diesel",4,true);
+		c1.display();
+	}
+
+}

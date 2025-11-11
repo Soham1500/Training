@@ -1,0 +1,142 @@
+package ss;
+
+class Student {
+	int fid;
+	String name;
+	int distance;
+	static int count = 0;
+
+	static int getCount() {
+		return count;
+	}
+
+	public static int setCount() {
+		return count;
+	}
+
+	public int getFid() {
+		return fid;
+	}
+
+	public void setFid(int fid) {
+		this.fid = fid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
+
+	Student() { // 🔹 Default constructor starts
+		System.out.println("student default constructor ");
+		count++;
+	} // 🔹 Default constructor ends
+
+	Student(int i, String n, int d) { // 🔹 Parameterized constructor starts
+		System.out.println("student para constructor ");
+		this.fid = i;
+		this.name = n;
+		this.distance = d;
+		count++;
+	} // 🔹 Parameterized constructor ends
+
+	void display() {
+		System.out.println(" fid is " + this.fid);
+		System.out.println("name is " + this.name);
+		System.out.println("Distance is " + this.distance);
+	}
+} // 🔹 Student class ends
+
+
+class PlacedStudent extends Student {
+
+	int fid;
+	String name;
+	int Distance;
+	String cName;
+	String designation;
+
+	public int getFid() {
+		return fid;
+	}
+
+	public void setFid(int fid) {
+		this.fid = fid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getDistance() {
+		return Distance;
+	}
+
+	public void setDistance(int distance) {
+		Distance = distance;
+	}
+
+	public String getcName() {
+		return cName;
+	}
+
+	public void setcName(String cName) {
+		this.cName = cName;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
+	PlacedStudent() { // 🔹 Default constructor starts
+		System.out.println("placed Student Default constructor -- ");
+	} // 🔹 Default constructor ends
+
+	PlacedStudent(int i, String n, int d, String cn, String dd) { // 🔹 Parameterized constructor starts
+		System.out.println("placed Student para constructor -- ");
+		this.fid = i;
+		this.name = n;
+		this.Distance = d;
+		this.cName = cn;
+		this.designation = dd;
+	} // 🔹 Parameterized constructor ends
+
+	void display() {
+		System.out.println("fid is " + this.fid);
+		System.out.println(" name is " + this.name);
+		System.out.println("distance is " + this.Distance);
+		System.out.println("Company name is " + this.cName);
+		System.out.println("Designation is " + this.designation);
+	}
+} // 🔹 PlacedStudent class ends
+
+
+public class Studentt {
+	public static void main(String[] args) {
+		Student s = new Student();
+		Student s2 = new Student(1, "sam", 2);
+		System.out.println(Student.count);
+
+		PlacedStudent p = new PlacedStudent();
+		System.out.println(Student.getCount());
+	}
+} // 🔹 Studentt class ends
