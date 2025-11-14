@@ -1,4 +1,8 @@
-package inheritance;
+package polymorphism;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 class BankAccount {
 	int accNo;
@@ -30,7 +34,7 @@ class BankAccount {
 	
 	void withdraw(int b) {
 		if(balance>b) {
-			System.out.println(this.b+"amount withfram successfully ");
+			System.out.println(this.balance+"amount withfram successfully ");
 		}
 	}
 
@@ -67,6 +71,13 @@ class SavingAccount extends BankAccount {
 		this.interestRate = interestRate;
 	}
 	 void withdraw(int a) {
+		 if(balance>a) {
+			 System.out.println(this.balance+" withdrawed ");
+			 
+		 }
+		 else {
+			 System.out.println("insufient");
+		 }
 		 
 	 }
 
@@ -91,7 +102,7 @@ class SavingAccount extends BankAccount {
 	} // display function ends
 } // class SavingAccount ends
 
-class CurrentAccount extends Account{
+class CurrentAccount extends BankAccount{
 	double overDraftLimit;
 
 	 double getOverDraftLimit() {
@@ -104,6 +115,14 @@ class CurrentAccount extends Account{
 	
 	void reaquestOverDraft() {
 		System.out.println("this is overDraft method ");
+	}
+	void withdraw(int a) {
+		if((balance+overDraftLimit)>a) {
+			System.out.println("withdraw successfull ");
+		}
+		else {
+			System.out.println("insuffient balance ");
+		}
 	}
 	CurrentAccount(){
 		super();
@@ -120,19 +139,49 @@ class CurrentAccount extends Account{
 		System.out.println("Over draft limit is :"+this.overDraftLimit);
 	}
 }
+class SalaryAcc extends BankAccount{
 
-public class Account_inheritance {
+	void withdraw(int a) {
+        LocalDate d = LocalDate.of(2025, 9, 13);
+        LocalDate d1 = LocalDate.now();
+
+        long monthsBetween = ChronoUnit.MONTHS.between(d, d1);
+
+        if (monthsBetween < 2 && a < balance) {
+            System.out.println("Withdraw up to " + this.balance);
+            System.out.println(monthsBetween);
+        } else {
+            System.out.println("Sorry");
+        }
+}
+}
+
+public class BankAccountPoly {
 	public static void main(String[] args) {
-		SavingAccount s1 = new SavingAccount();
-		s1.display();
-
-		SavingAccount s2 = new SavingAccount(2024, 50000, 7.5);
-		s2.display();
+//		SavingAccount s1 = new SavingAccount();
+//		s1.display();
+//
+//		SavingAccount s2 = new SavingAccount(2024, 50000, 7.5);
+//		s2.display();
+//		
+//		CurrentAccount a=new CurrentAccount();
+//		a.display();
 		
-		CurrentAccount a=new CurrentAccount();
-		a.display();
 		
+		BankAccount b;
+		b=new BankAccount();
+		b.withdraw(90);
 		
+		b=new SavingAccount();
+		b.withdraw(20);
+		
+		b=new CurrentAccount();
+		b.withdraw(20000);
+		
+		b=new SalaryAcc();
+		b.withdraw(20);
 		
 	}
 } // class Account_inheritance ends
+
+

@@ -1,4 +1,6 @@
-package inheritance;
+package polymorphism;
+
+
 
 class BankAccount {
 	int accNo;
@@ -121,7 +123,7 @@ class CurrentAccount extends Account{
 	}
 }
 
-public class Account_inheritance {
+public class AccountPoly {
 	public static void main(String[] args) {
 		SavingAccount s1 = new SavingAccount();
 		s1.display();
@@ -136,3 +138,4 @@ public class Account_inheritance {
 		
 	}
 } // class Account_inheritance ends
+

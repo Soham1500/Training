@@ -211,7 +211,18 @@ public class EmployeeInheritance {
 //
 //		Admin a1 = new Admin("Neha", 301, 85000, "Finance");
 //		a1.display();
-		AreaSalesManager a1=new AreaSalesManager();
-		a1.display();
+//		AreaSalesManager a1=new AreaSalesManager();
+//		a1.display();
+
+	Employee e1;
+	e1=new Employee("sam",12,12123);
+	e1.display();
+	
+	e1=new HR("saaam",123,987,9876);
+	e1.display();
+	e1=new Admin("lkj",43,65,"plpl");
+	e1.display();
+	e1=new SalesMan("asam",9782,999,32);
+	e1.display();
 	}
 } // class EmployeeInher ends
